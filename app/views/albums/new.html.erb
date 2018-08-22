@@ -4,16 +4,25 @@
   <p>
     <%= form.label :title %><br>
     <%= form.text_field :title %>
+    <% @album.errors.to_hash[:title].each do |error| %>
+      <div><%= error %><div>
+    <% end %>
   </p>
  
   <p>
     <%= form.label :artist_name %><br>
     <%= form.text_field :artist_name %>
+    <% @album.errors.to_hash[:artist_name].each do |error| %>
+      <div><%= error %><div>
+    <% end %>
   </p>
 
   <p>
     <%= form.label :year_released %><br>
     <%= form.date_field :year_released %>
+    <% @album.errors.to_hash[:year_released].each do |error| %>
+      <div><%= error %><div>
+    <% end %>
   </p>
  
   <p>
