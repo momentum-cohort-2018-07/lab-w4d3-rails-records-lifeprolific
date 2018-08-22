@@ -12,5 +12,6 @@
       <td><%= album.artist_name %></td>
       <td><%= album.year_released.year %></td>
       <td><%= link_to 'edit', edit_album_path(album) %></td>
+      <td><%= link_to 'delete', album_path(album), method: :delete, data: { confirm: 'Are you sure?' } %></td>
     </tr>
   <% end %>

@@ -32,4 +32,10 @@ class AlbumsController < ApplicationController
   def edit
     @album = Album.find(params[:id])
   end
+
+  def destroy
+    @album = Album.find(params[:id])
+    @album.destroy
+    redirect_to albums_path
+  end
 end
