@@ -1,2 +1,23 @@
-<h1>Albums#new</h1>
-<p>Find me in app/views/albums/new.html.erb</p>
+<h1>Add a New Album</h1>
+
+<%= form_with scope: :album, url: albums_path, local: true do |form| %>
+  <p>
+    <%= form.label :title %><br>
+    <%= form.text_field :title %>
+  </p>
+ 
+  <p>
+    <%= form.label :artist_name %><br>
+    <%= form.text_field :artist_name %>
+  </p>
+
+  <p>
+    <%= form.label :year_released %><br>
+    <%= form.date_field :year_released %>
+  </p>
+ 
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>
+<%= link_to 'back to index', albums_path %>
