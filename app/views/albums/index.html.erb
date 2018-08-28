@@ -1,0 +1,26 @@
+<div class="card">
+  <div class ="card-body">
+    <h1>Albums</h1>
+    <%= link_to 'add new album...', new_album_path, class: "btn btn-secondary" %>
+    <table class="table">
+      <thead class="thead-light">
+        <tr>
+          <th scope="col">Title</th>
+          <th scope="col">Artist</th>
+          <th scope="col">Released</th>
+          <th scope="col"></th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <% @albums.each do |album| %>
+        <tr>
+          <td><%= link_to album.title, album, class: "btn btn-info" %></td>
+          <td><%= album.artist_name %></td>
+          <td><%= album.year_released.year %></td>
+          <td><%= link_to 'edit', edit_album_path(album), class: "btn btn-warning" %></td>
+          <td><%= link_to 'delete', album_path(album), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %></td>
+        </tr>
+      <% end %>
+    </table>
+  <div class ="card-body">
+</div>

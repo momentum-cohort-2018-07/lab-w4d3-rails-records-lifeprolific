@@ -1,0 +1,11 @@
+<div class="card">
+  <div class ="card-body">
+    <h1><%= @album.title %></h1>
+    <p><%= @album.artist_name %>, <%= @album.year_released.year %><p>
+    <nav>
+      <%= link_to 'back to index', albums_path, class: "btn btn-info" %>
+      <%= link_to 'edit', edit_album_path(@album), class: "btn btn-warning" %>
+      <%= link_to 'delete', album_path(@album), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
+    </nav>
+  </div>
+</div>
